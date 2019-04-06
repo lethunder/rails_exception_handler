@@ -69,7 +69,7 @@ class RailsExceptionHandler::Handler
   end
 
   def response_layout
-    if(@request.xhr?)
+    if(@request.xhr? || @request.format.json?)
       false
     else
       if Rails::VERSION::MAJOR > 4
